@@ -646,7 +646,7 @@ public unsafe partial class DebugRenderer
 
             DrawFieldName(fieldInfo);
 
-            if (fieldType == typeof(uint) && fieldInfo.Name == "IconId")
+            if (fieldType == typeof(uint) && fieldInfo.Name.Contains("IconId", StringComparison.InvariantCultureIgnoreCase))
                 DrawIcon(*(uint*)fieldAddress);
 
             if (fieldType.IsPointer && fieldAddress != 0)
